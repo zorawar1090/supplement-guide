@@ -21,9 +21,25 @@ export default class MainForm extends React.Component {
     )
   }
 
+  changeStep = step => e => {
+    e.preventDefault()
+    this.setState(
+      {
+        step: step
+      }
+    )
+  }
+
   handleClick = input => e => {
-    console.log(e.target.value)
-    this.setState({ [input]: e.target.value })
+    console.log(e.target.childNodes[0].innerHTML)
+    const { step } = this.state
+    const gender = 'male'
+    const age = '18-34'
+    const goal = 'diet'
+    if(step === 3){
+      window.open(`https://xxlnutrition.com/nl/nld/supplement_guide_results/products?gender=${gender}&age=${age}&goal=${goal}`, '_blank')
+    }
+    this.setState({ [input]: e.target.childNodes[0].innerHTML})
     this.nextStep()
   }
 
@@ -34,8 +50,8 @@ export default class MainForm extends React.Component {
     switch (step) {
       case 1:
         return (
-          <div>
-            <StepNavigation />
+          <div className="supplement-guide">
+            <StepNavigation changeStep={this.changeStep} step={step}/>
             <GenderForm
               nextStep={this.nextStep}
               handleClick={this.handleClick}
@@ -45,8 +61,8 @@ export default class MainForm extends React.Component {
         )
       case 2:
         return (
-          <div>
-            <StepNavigation />
+          <div className="supplement-guide">
+            <StepNavigation changeStep={this.changeStep} step={step}/>
             <LevelForm
               nextStep={this.nextStep}
               handleClick={this.handleClick}
@@ -56,8 +72,8 @@ export default class MainForm extends React.Component {
         )
       case 3:
         return (
-          <div>
-            <StepNavigation />
+          <div className="supplement-guide">
+            <StepNavigation changeStep={this.changeStep} step={step}/>
             <GoalForm
               values={values}
               handleClick={this.handleClick}
@@ -65,7 +81,9 @@ export default class MainForm extends React.Component {
           </div>
         )
       default:
-        return
+        return (
+          <h1>Redirecting</h1>
+        )
     }
   }
 }
