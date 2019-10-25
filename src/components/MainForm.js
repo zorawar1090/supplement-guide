@@ -20,7 +20,7 @@ export default class MainForm extends React.Component {
     )
   }
 
-  handleChange = input => e => {
+  handleClick = input => e => {
     console.log(e.target.value)
     this.setState({ [input]: e.target.value })
   }
@@ -35,7 +35,7 @@ export default class MainForm extends React.Component {
         return (
           <GenderForm
             nextStep={this.nextStep}
-            handleChange={this.handleChange}
+            handleClick={this.handleClick}
             values={values}
           />
         )
@@ -43,7 +43,7 @@ export default class MainForm extends React.Component {
         return (
           <LevelForm
             nextStep={this.nextStep}
-            handleChange={this.handleChange}
+            handleClick={this.handleClick}
             values={values}
           />
         )

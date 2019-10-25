@@ -7,11 +7,11 @@ export default class GenderForm extends React.Component {
   };
 
   render() {
-    const { values, handleChange } = this.props;
+    const { values, handleClick } = this.props;
     return (
       <div>
-        <button value="Man" onClick={handleChange('gender')}>Man</button>
-        <button value="Vrouw" onClick={handleChange('gender')}>Vrouw</button>
+        <button value="Man" onClick={handleClick('gender')}>Man</button>
+        <button value="Vrouw" onClick={handleClick('gender')}>Vrouw</button>
       </div>
     )
   }
