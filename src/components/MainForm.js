@@ -1,7 +1,7 @@
 import React from 'react'
-import GenderForm from 'GenderForm'
-import LevelForm from 'LevelForm'
-import GoalForm from 'GoalForm'
+import GenderForm from './GenderForm'
+import LevelForm from './LevelForm'
+import GoalForm from './GoalForm'
 
 export default class MainForm extends React.Component {
   state = {
@@ -21,8 +21,9 @@ export default class MainForm extends React.Component {
   }
 
   handleChange = input => e => {
-    this.setState({ [input]: e.target.value });
-  };
+    console.log(e.target.value)
+    this.setState({ [input]: e.target.value })
+  }
 
   render() {
     const { step } = this.state
@@ -52,8 +53,8 @@ export default class MainForm extends React.Component {
             values={values}
           />
         )
-      default: 
-          return
+      default:
+        return
     }
   }
 }
