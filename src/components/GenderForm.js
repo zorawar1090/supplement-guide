@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default class GenderForm extends React.Component {
+  
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
