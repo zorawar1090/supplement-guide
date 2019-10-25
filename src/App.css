@@ -1,22 +1,70 @@
+body {
+  background-color: black;
+}
+
 .App {
+  height: 80vh;
+  background-color: darkgoldenrod;
+  text-align: center;
+  margin: 3%;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 25px;
+}
+
+.supplement-guide {
+  display: block;
+}
+
+.supplement-guide .content {
+  display: block;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.supplement-guide .content .control-group {
+  display: inline-block;
+  margin: 0 100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.supplement-guide .content .img {
+  display: inline-block;
+  margin: 30px;
+  height: 100px;
+  width: 100px;
 }
 
-.App-link {
-  color: #09d3ac;
+.supplement-guide ul {
+  list-style: none;
+  margin: 0;
+  padding: 5%;
+}
+
+.supplement-guide .navigation ul li {
+  cursor: pointer;
+  padding: 10px 17px;
+  font-size: 16px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #85878a;
+  margin: 0 5px;
+  color: #fff;
+  font-weight: 700
+}
+
+.supplement-guide .navigation ul li.active {
+  background-color: #e02121
+}
+
+.btn, .btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 10rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  position: relative;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
 }
